@@ -112,6 +112,11 @@ public class Principal extends javax.swing.JFrame {
 
         cmbBorrar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         cmbBorrar.setText("Borrar");
+        cmbBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbBorrarActionPerformed(evt);
+            }
+        });
         jPanel3.add(cmbBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, -1, -1));
 
         cmbOperacion.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -230,6 +235,13 @@ public class Principal extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_cmbMostrarActionPerformed
+
+    private void cmbBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbBorrarActionPerformed
+        txtLongitud.setText("");
+        txtResultado.setText("");
+        v=null;
+        txtLongitud.requestFocusInWindow();
+    }//GEN-LAST:event_cmbBorrarActionPerformed
 
     /**
      * @param args the command line arguments
