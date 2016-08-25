@@ -5,6 +5,7 @@
  */
 package Interfaz;
 
+import javafx.beans.binding.Bindings;
 import javax.swing.JOptionPane;
 
 /**
@@ -175,6 +176,7 @@ public class Principal extends javax.swing.JFrame {
             n= Double.parseDouble(JOptionPane.showInputDialog(this, "Digite el Elemento EN La Posicion "+i));
             v[i]=n;
         }
+       JOptionPane.showMessageDialog(this, "Vector Creado Exitosamente");
     }//GEN-LAST:event_cmbManualActionPerformed
 
     private void cmbAutomaticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbAutomaticoActionPerformed
@@ -190,7 +192,7 @@ public class Principal extends javax.swing.JFrame {
         String Cpares,Cimpares,Cprimos;
         int op,elepares=0,eleimpares=0,eleprimos=0;
         op= cmbOperacion.getSelectedIndex();
-        
+
         switch (op){
             case 0:
                 for (int i = 0; i < v.length; i++) {
@@ -199,12 +201,18 @@ public class Principal extends javax.swing.JFrame {
                     }
                 }
                 Cpares=String.valueOf(elepares);
-                txtResultado.append("El Vector Tiene  " +Cpares+ " Numeros Pares");
+                txtResultado.append("El Vector Tiene  " +Cpares+ " Elementos Pares\n");
+                break;
+            case 1:
+                for (int i = 0; i < v.length; i++) {
+                    if(v[i]%2!=0){
+                        eleimpares=eleimpares+1;
                     }
-                    
-                
-                
-        
+                }
+                Cimpares=String.valueOf(eleimpares);
+                txtResultado.append("El Vector Tiene " +Cimpares+ " Elementos Impares\n");
+                break;
+        }
         
     }//GEN-LAST:event_cmbMostrarActionPerformed
 
