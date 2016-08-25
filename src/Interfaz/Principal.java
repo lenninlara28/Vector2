@@ -102,6 +102,11 @@ public class Principal extends javax.swing.JFrame {
 
         cmbMostrar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         cmbMostrar.setText("Mostrar");
+        cmbMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbMostrarActionPerformed(evt);
+            }
+        });
         jPanel3.add(cmbMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
 
         cmbBorrar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -122,9 +127,9 @@ public class Principal extends javax.swing.JFrame {
         txtResultado.setRows(5);
         jScrollPane1.setViewportView(txtResultado);
 
-        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 130, 140));
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 240, 140));
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 190, 210));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 260, 210));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -180,6 +185,28 @@ public class Principal extends javax.swing.JFrame {
          }
         JOptionPane.showMessageDialog(this, "Vector Creado Exitosamente");
     }//GEN-LAST:event_cmbAutomaticoActionPerformed
+
+    private void cmbMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMostrarActionPerformed
+        String Cpares,Cimpares,Cprimos;
+        int op,elepares=0,eleimpares=0,eleprimos=0;
+        op= cmbOperacion.getSelectedIndex();
+        
+        switch (op){
+            case 0:
+                for (int i = 0; i < v.length; i++) {
+                    if(v[i]%2==0){
+                        elepares=elepares+1;
+                    }
+                }
+                Cpares=String.valueOf(elepares);
+                txtResultado.append("El Vector Tiene  " +Cpares+ " Numeros Pares");
+                    }
+                    
+                
+                
+        
+        
+    }//GEN-LAST:event_cmbMostrarActionPerformed
 
     /**
      * @param args the command line arguments
