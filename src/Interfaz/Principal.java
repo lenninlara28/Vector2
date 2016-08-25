@@ -93,6 +93,11 @@ public class Principal extends javax.swing.JFrame {
 
         cmbAutomatico.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         cmbAutomatico.setText("Llenar Automatico");
+        cmbAutomatico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbAutomaticoActionPerformed(evt);
+            }
+        });
         jPanel3.add(cmbAutomatico, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
 
         cmbMostrar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -166,6 +171,15 @@ public class Principal extends javax.swing.JFrame {
             v[i]=n;
         }
     }//GEN-LAST:event_cmbManualActionPerformed
+
+    private void cmbAutomaticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbAutomaticoActionPerformed
+        double n;
+        for (int i = 0; i < v.length; i++) {
+        n= (int)(Math.random()*50+1);
+        v[i]=n;
+         }
+        JOptionPane.showMessageDialog(this, "Vector Creado Exitosamente");
+    }//GEN-LAST:event_cmbAutomaticoActionPerformed
 
     /**
      * @param args the command line arguments
