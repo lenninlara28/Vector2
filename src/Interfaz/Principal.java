@@ -212,6 +212,21 @@ public class Principal extends javax.swing.JFrame {
                 Cimpares=String.valueOf(eleimpares);
                 txtResultado.append("El Vector Tiene " +Cimpares+ " Elementos Impares\n");
                 break;
+            case 2:
+                int contador=0;
+                for (int i = 0; i < v.length; i++) {
+                    for (int k=1;k<v[i];k++){
+                        if(v[i]%k==0){
+                            contador=contador+1;
+                        }
+                        if (contador==2){
+                            eleprimos=eleprimos+1;}
+                    }
+                }
+                Cprimos=String.valueOf(eleprimos);
+                txtResultado.append("El Vector Tiene " +Cprimos+ " Elementos Primos\n");
+                break;
+                
         }
         
     }//GEN-LAST:event_cmbMostrarActionPerformed
